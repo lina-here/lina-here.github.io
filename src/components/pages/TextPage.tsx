@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
+import { Download } from 'lucide-react';
 import { TextPageConfig } from '@/types/page';
 
 interface TextPageProps {
@@ -23,6 +24,12 @@ export default function TextPage({ config, content, embedded = false }: TextPage
                 <p className={`${embedded ? "text-base" : "text-lg"} text-neutral-600 dark:text-neutral-500 mb-8 max-w-2xl`}>
                     {config.description}
                 </p>
+            )}
+            {config.download_url && (
+                <a href={config.download_url} download className="mb-8 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-dark">
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    {config.download_label || 'Download document'}
+                </a>
             )}
             <div className="text-neutral-700 dark:text-neutral-600 leading-relaxed">
                 <ReactMarkdown

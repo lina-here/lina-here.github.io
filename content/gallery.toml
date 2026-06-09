@@ -1,0 +1,34 @@
+type = "card"
+title = "Photo Gallery"
+description = "Synthetic placeholders showing the proposed gallery layout. Final photographs, captions, dates, permissions, and credits are still required."
+layout = "gallery"
+
+[[items]]
+title = "International conference"
+subtitle = "Geneva - sample caption"
+image = "/gallery/conference.svg"
+
+[[items]]
+title = "Knowledge workshop"
+subtitle = "Professional learning - sample caption"
+image = "/gallery/workshop.svg"
+
+[[items]]
+title = "Youth engagement"
+subtitle = "Innovation program - sample caption"
+image = "/gallery/youth.svg"
+
+[[items]]
+title = "World IP Day"
+subtitle = "Campaign moment - sample caption"
+image = "/gallery/ip-day.svg"
+
+[[items]]
+title = "Digital transformation"
+subtitle = "Resource launch - sample caption"
+image = "/gallery/digital.svg"
+
+[[items]]
+title = "Panel discussion"
+subtitle = "Expert exchange - sample caption"
+image = "/gallery/panel.svg"

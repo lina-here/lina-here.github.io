@@ -1,3 +1,6 @@
 type = "text"
 title = "CV"
 source = "cv.md"
+description = "Professional experience, certificates, and selected ITU-related achievements. Draft content is clearly marked."
+download_url = "/documents/na-li-cv-synthetic.docx"
+download_label = "Download sample CV (Word)"

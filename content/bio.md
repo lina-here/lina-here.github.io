@@ -1,5 +1,5 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+Na Li works at the intersection of intellectual property, international cooperation, knowledge sharing, and digital transformation.
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
+This draft portfolio presents selected PCT stories, educational resources, publications, campaigns, and professional achievements. The biography, role description, and institutional wording are synthetic placeholders pending approval.
 
-My current research focuses on investigating the mathematical principles of natural philosophy.
+> **Draft notice:** The portrait and all current project descriptions are demonstration content. They must be replaced or approved before public launch.

@@ -1,7 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
+import Image from 'next/image';
+import { ArrowUpRight, X } from 'lucide-react';
 import { CardPageConfig } from '@/types/page';
 
 const markdownComponents = {
@@ -30,6 +33,10 @@ const markdownComponents = {
 };
 
 export default function CardPage({ config, embedded = false }: { config: CardPageConfig; embedded?: boolean }) {
+    const [selectedImage, setSelectedImage] = useState<number | null>(null);
+    const isGrid = config.layout === 'grid';
+    const isGallery = config.layout === 'gallery';
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -47,16 +54,33 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                 )}
             </div>
 
-            <div className={`grid ${embedded ? "gap-4" : "gap-6"}`}>
+            <div className={`grid ${embedded ? "gap-4" : "gap-6"} ${isGallery ? 'sm:grid-cols-2 lg:grid-cols-3' : isGrid ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
                 {config.items.map((item, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
+                        className={`overflow-hidden bg-white dark:bg-neutral-900 ${item.image ? "" : embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
                     >
-                        <div className="flex justify-between items-start mb-2">
+                        {item.image && (
+                            <button
+                                type="button"
+                                className={`relative block w-full overflow-hidden text-left ${isGallery ? 'aspect-[4/3]' : 'aspect-[16/9]'}`}
+                                onClick={() => isGallery && setSelectedImage(index)}
+                                aria-label={isGallery ? `Open ${item.title} image` : undefined}
+                            >
+                                <Image
+                                    src={item.image}
+                                    alt={item.title}
+                                    fill
+                                    sizes="(min-width: 1024px) 33vw, 50vw"
+                                    className="object-cover transition-transform duration-300 hover:scale-105"
+                                />
+                            </button>
+                        )}
+                        <div className={item.image ? embedded ? "p-4" : "p-5" : ""}>
+                        <div className="flex justify-between items-start gap-3 mb-2">
                             <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary`}>{item.title}</h3>
                             {item.date && (
                                 <span className="text-sm text-neutral-500 font-medium bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded">
@@ -83,9 +107,40 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                 ))}
                             </div>
                         )}
+                        {item.link && (
+                            <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-dark">
+                                Visit resource
+                                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                            </a>
+                        )}
+                        </div>
                     </motion.div>
                 ))}
             </div>
+
+            {selectedImage !== null && config.items[selectedImage]?.image && (
+                <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={config.items[selectedImage].title}
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button type="button" className="absolute right-5 top-5 rounded-full bg-white/10 p-2 text-white hover:bg-white/20" onClick={() => setSelectedImage(null)} aria-label="Close image">
+                        <X className="h-6 w-6" />
+                    </button>
+                    <div className="max-w-5xl" onClick={(event) => event.stopPropagation()}>
+                        <Image
+                            src={config.items[selectedImage].image}
+                            alt={config.items[selectedImage].title}
+                            width={1400}
+                            height={1000}
+                            className="max-h-[80vh] w-auto rounded-xl object-contain"
+                        />
+                        <p className="mt-3 text-center text-sm text-white">{config.items[selectedImage].title}</p>
+                    </div>
+                </div>
+            )}
         </motion.div>
     );
 }

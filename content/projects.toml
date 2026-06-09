@@ -1,0 +1,69 @@
+type = "card"
+title = "Projects and Resources"
+description = "Selected initiatives and original professional content. All descriptions and links in this draft are synthetic placeholders."
+layout = "grid"
+
+[[items]]
+title = "PCT Stories"
+subtitle = "Original LinkedIn series"
+date = "Ongoing"
+content = "A growing collection of practical stories explaining how the Patent Cooperation Treaty supports innovators across borders."
+tags = ["PCT", "Storytelling"]
+link = "https://www.linkedin.com/"
+image = "/projects/pct-stories.svg"
+
+[[items]]
+title = "PCT Newsletters"
+subtitle = "Knowledge and updates"
+content = "Curated developments, practical guidance, and stories from the international patent system."
+tags = ["Newsletter", "Patents"]
+link = "https://www.wipo.int/pct/en/"
+image = "/projects/pct-newsletter.svg"
+
+[[items]]
+title = "WIPO Knowledge and Resources"
+subtitle = "LinkedIn content"
+content = "Professional posts connecting audiences with useful intellectual property tools and learning materials."
+tags = ["Knowledge", "LinkedIn"]
+link = "https://www.linkedin.com/"
+image = "/projects/wipo-knowledge.svg"
+
+[[items]]
+title = "WKC Newsletter"
+subtitle = "Knowledge communication"
+content = "A newsletter concept presenting timely resources, expert perspectives, and practical learning opportunities."
+tags = ["Editorial", "Knowledge"]
+link = "https://www.wipo.int/"
+image = "/projects/wkc-newsletter.svg"
+
+[[items]]
+title = "World IP Day"
+subtitle = "Global campaign"
+content = "Campaign content celebrating creativity, innovation, and the role of intellectual property in improving lives."
+tags = ["Campaign", "World IP Day"]
+link = "https://www.wipo.int/web/ipday"
+image = "/projects/world-ip-day.svg"
+
+[[items]]
+title = "Youth Video Competition"
+subtitle = "Youth engagement"
+content = "An international storytelling initiative inviting young creators to share ideas through short-form video."
+tags = ["Youth", "Video"]
+link = "https://www.wipo.int/"
+image = "/projects/youth-video.svg"
+
+[[items]]
+title = "Digital Transformation Resource Hub"
+subtitle = "Practical digital resources"
+content = "A structured collection of tools and examples supporting organizations through digital change."
+tags = ["Digital", "Resource Hub"]
+link = "https://www.itu.int/"
+image = "/projects/digital-hub.svg"
+
+[[items]]
+title = "Publications"
+subtitle = "Articles and knowledge products"
+content = "Selected publications on intellectual property, communications, innovation, and digital transformation."
+tags = ["Publications", "Research"]
+link = "https://www.wipo.int/publications/en/"
+image = "/projects/publications.svg"
