@@ -14,6 +14,13 @@ export interface TextPageConfig extends BasePageConfig {
     source: string;
     download_url?: string;
     download_label?: string;
+    credentials?: Array<{
+        title: string;
+        issuer: string;
+        date: string;
+        image: string;
+        document_url?: string;
+    }>;
 }
 
 export interface CardItem {

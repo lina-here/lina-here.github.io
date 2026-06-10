@@ -55,15 +55,6 @@ Na (Lina) Li is an intellectual property and public policy professional with exp
 
 **Exchange Student** - *2016 - 2017*
 
-## Intellectual Property Credentials
-
-- **WIPO Academy Advanced Course on Copyright and Related Rights (Version 2)**, completed July 2025
-- **WIPO Academy Advanced Course on Patents**, completed July 2025
-- **Patent Law and Global Public Health ("PatentX")**, Harvard Law School and WIPO Academy, completed January 2025
-- **WIPO-UNIGE Summer School on Intellectual Property**, University of Geneva and WIPO, completed June 2024
-
-[View IP certificates (PDF)](/documents/IP%20Certificates.pdf)
-
 ## Selected ITU Achievements
 
 - Led the **Digital Transformation Resource Hub**, aggregating reports, studies, and guidance on emerging technologies for cities and communities.
