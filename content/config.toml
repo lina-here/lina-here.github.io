@@ -11,14 +11,14 @@ institution = "Geneva, Switzerland"
 avatar = "/na-li-profile.svg"
 
 [social]
-email = "na.li@example.com"
+email = "linanalilee@gmail.com"
 location = "Geneva, Switzerland"
 location_url = "https://maps.google.com/?q=Geneva%2C+Switzerland"
 location_details = [
   "Geneva, Switzerland",
   "Professional contact details to be confirmed"
 ]
-linkedin = "https://www.linkedin.com/"
+linkedin = "https://www.linkedin.com/in/na-li-wkc/"
 
 [features]
 enable_likes = false
