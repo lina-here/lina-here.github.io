@@ -1,29 +1,22 @@
 type = "about"
-title = "About"
+title = "Introduction"
 
 [profile]
 research_interests = [
-  "Computational Physics",
-  "Mathematical Principles",
-  "Proof of Theorems"
+  "Intellectual Property",
+  "PCT Knowledge",
+  "Youth Engagement",
+  "Digital Transformation"
 ]
 
 [[sections]]
 id = "about"
 type = "markdown"
 source = "bio.md"
-title = "About"
-
-[[sections]]
-id = "featured_publications"
-type = "publications"
-title = "Selected Publications"
-filter = "selected"
-limit = 5
+title = "Introduction"
 
 [[sections]]
 id = "news"
 type = "list"
-title = "News"
+title = "Latest updates"
 source = "news.toml"
-

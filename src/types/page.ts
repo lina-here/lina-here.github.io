@@ -12,6 +12,15 @@ export interface PublicationPageConfig extends BasePageConfig {
 export interface TextPageConfig extends BasePageConfig {
     type: 'text';
     source: string;
+    download_url?: string;
+    download_label?: string;
+    credentials?: Array<{
+        title: string;
+        issuer: string;
+        date: string;
+        image: string;
+        document_url?: string;
+    }>;
 }
 
 export interface CardItem {
@@ -26,5 +35,6 @@ export interface CardItem {
 
 export interface CardPageConfig extends BasePageConfig {
     type: 'card';
+    layout?: 'list' | 'grid' | 'gallery';
     items: CardItem[];
 }

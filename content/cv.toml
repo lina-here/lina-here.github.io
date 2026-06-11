@@ -1,3 +1,34 @@
 type = "text"
 title = "CV"
 source = "cv.md"
+description = "Professional experience in intellectual property, public policy, knowledge management, and digital transformation."
+download_url = "/documents/Na%20Li_CV_WIPO_IP.docx"
+download_label = "Download CV (Word)"
+
+[[credentials]]
+title = "Patent Law and Global Public Health (PatentX)"
+issuer = "Harvard Law School and WIPO Academy"
+date = "January 2025"
+image = "/certificates/patentx.jpg"
+document_url = "/documents/IP%20Certificates.pdf#page=1"
+
+[[credentials]]
+title = "WIPO-UNIGE Summer School on Intellectual Property"
+issuer = "University of Geneva and WIPO"
+date = "June 2024"
+image = "/certificates/wipo-unige-summer-school.jpg"
+document_url = "/documents/IP%20Certificates.pdf#page=2"
+
+[[credentials]]
+title = "Advanced Course on Copyright and Related Rights"
+issuer = "WIPO Academy"
+date = "July 2025"
+image = "/certificates/copyright-and-related-rights.jpg"
+document_url = "/documents/IP%20Certificates.pdf#page=3"
+
+[[credentials]]
+title = "Advanced Course on Patents"
+issuer = "WIPO Academy"
+date = "July 2025"
+image = "/certificates/advanced-patents.jpg"
+document_url = "/documents/IP%20Certificates.pdf#page=4"
