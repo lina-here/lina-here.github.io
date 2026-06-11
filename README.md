@@ -2,17 +2,96 @@
   <img src="./logo.png" alt="PRISM Logo" height="100"/>
 </div>
 
-# PRISM
+# Na Li's Personal Website
 
-**English** · [中文](README_cn.md) · [Demo](https://prism-demo.pages.dev)  · [Changelog](CHANGELOG.md)
-
-**If you like this project, please give it a star ⭐️**
-
-PRISM stands for **P**ortfolio & **R**esearch **I**nterface **S**ite **M**aker. It is a modern, configurable, and high-performance personal website template built with Next.js, Tailwind CSS, and TypeScript. It is designed for researchers, developers, and academics to showcase their work, publications, and portfolio with ease.
-
-Feel free to customize your own version of PRISM with coding agents.
+This is the code for Na Li's personal website, built with a template called **PRISM**. You don't need to know how to code — this guide walks you through everything step by step.
 
 ![PRISM Preview](screenshot.png)
+
+---
+
+## 👋 Owner's Guide (No Coding Experience Needed)
+
+### Step 1: Create a GitHub Account
+
+GitHub is the website where this project's files are stored.
+
+1. Go to [github.com/signup](https://github.com/signup)
+2. Enter your email, create a password, and pick a username
+3. Verify your email when GitHub sends you a confirmation link
+4. The free plan is all you need
+
+### Step 2: Get This Project Transferred to You
+
+The current owner needs to transfer this repository to your new GitHub account.
+
+**The current owner does this:**
+1. Go to the project page: `https://github.com/skang10/lina-website`
+2. Click **Settings** (top right of the repo page)
+3. Scroll all the way down to the **"Danger Zone"**
+4. Click **Transfer ownership**
+5. Type your GitHub username and confirm
+
+**You do this:**
+1. Check your email or your GitHub notifications (bell icon) for a transfer invitation
+2. Click **Accept** to confirm — the project is now yours, at `https://github.com/<your-username>/lina-website`
+
+### Step 3: Set Up Claude Code on Your Computer
+
+Claude Code is an AI assistant that edits the website's files for you when you describe what you want in plain English.
+
+1. **Install Node.js** (needed to run the website)
+   - Go to [nodejs.org/en/download](https://nodejs.org/en/download) and install the recommended version
+
+2. **Install Git** (needed to download and save your project)
+   - Mac: open the **Terminal** app and type `git --version` — if it's not installed, your Mac will prompt you to install it
+   - Windows: download from [git-scm.com](https://git-scm.com/downloads)
+
+3. **Install Claude Code**
+   - Open **Terminal** (Mac) or **Command Prompt** (Windows)
+   - Run:
+     ```bash
+     npm install -g @anthropic-ai/claude-code
+     ```
+   - You'll need a Claude account — sign up at [claude.ai](https://claude.ai) if you don't have one
+
+4. **Download your project to your computer**
+   - In Terminal/Command Prompt, run (replace `<your-username>` with your GitHub username):
+     ```bash
+     git clone https://github.com/<your-username>/lina-website.git
+     cd lina-website
+     npm install
+     ```
+
+### Step 4: Make Changes
+
+1. Open Terminal/Command Prompt and navigate into the project folder:
+   ```bash
+   cd lina-website
+   ```
+
+2. Start Claude Code:
+   ```bash
+   claude
+   ```
+
+3. Tell Claude what you want to change, in plain English. For example:
+   - "Update my bio to say I'm now a postdoc at Stanford"
+   - "Add a new publication to my publications list"
+   - "Change the photo on my homepage to photo.jpg in the public folder"
+
+4. **Preview your changes** before they go live:
+   ```bash
+   npm run dev
+   ```
+   Then open [http://localhost:3000](http://localhost:3000) in your browser. Press `Ctrl+C` in the terminal to stop the preview.
+
+5. **Publish your changes** — once you're happy, ask Claude:
+   - "Commit and push my changes to GitHub"
+
+   If automatic deployment is enabled (see [Deployment Guide](docs/deployment.md)), your live website will update on its own within a few minutes.
+
+---
 
 ## ✨ Features
 
@@ -22,38 +101,6 @@ Feel free to customize your own version of PRISM with coding agents.
 *   **⚡️ High Performance**: Built on Next.js 20 with Turbopack. Static export ensures blazing fast load times and easy deployment.
 *   **🔍 SEO Optimized**: Dynamic metadata generation for every page.
 *   **🧩 Dynamic Routing**: Easily add new pages by simply creating a config file.
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-*   Node.js 22 or later
-    *   **Important**: Please download and install Node.js manually from [https://nodejs.org/en/download](https://nodejs.org/en/download).
-    *   Better not to use the pre-installed version on your system, as it may be outdated or incompatible.
-*   npm, pnpm, or yarn
-
-### Installation
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/xyjoey/PRISM.git
-    cd PRISM
-    ```
-
-2.  **Install dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-3.  **Run the development server:**
-
-    ```bash
-    npm run dev
-    ```
-
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## 🛠️ Configuration
 
@@ -131,10 +178,6 @@ PRISM/
 ├── next.config.ts        # Next.js configuration
 └── tailwind.config.ts    # Tailwind CSS configuration
 ```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
