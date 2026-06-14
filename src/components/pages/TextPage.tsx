@@ -41,7 +41,7 @@ export default function TextPage({ config, content, embedded = false }: TextPage
                         <div>
                             <h2 className="text-2xl font-serif font-bold text-primary">Professional Credentials</h2>
                             <p className="text-sm text-neutral-600 dark:text-neutral-500">
-                                Selected intellectual property certificates
+                                Selected certificates and diplomas
                             </p>
                         </div>
                     </div>
@@ -92,10 +92,30 @@ export default function TextPage({ config, content, embedded = false }: TextPage
                         h1: ({ children }) => <h1 className="text-3xl font-serif font-bold text-primary mt-8 mb-4">{children}</h1>,
                         h2: ({ children }) => <h2 className="text-2xl font-serif font-bold text-primary mt-8 mb-4 border-b border-neutral-200 dark:border-neutral-800 pb-2">{children}</h2>,
                         h3: ({ children }) => <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{children}</h3>,
-                        p: ({ children }) => <p className="mb-4 last:mb-0">{children}</p>,
+                        p: ({ children }) => {
+                            const text = typeof children === 'string' ? children : '';
+                            const isPhotoCredit = text.startsWith('Photos:');
+                            const isPatentCredit = text.includes('PCT/US2015/056771');
+
+                            return (
+                                <p className={isPhotoCredit || isPatentCredit ? "mt-[-1rem] mb-4 text-xs text-neutral-500" : "mb-4 last:mb-0"}>
+                                    {children}
+                                </p>
+                            );
+                        },
                         ul: ({ children }) => <ul className="list-disc list-inside mb-4 space-y-1 ml-4">{children}</ul>,
                         ol: ({ children }) => <ol className="list-decimal list-inside mb-4 space-y-1 ml-4">{children}</ol>,
                         li: ({ children }) => <li className="mb-1">{children}</li>,
+                        img: ({ src, alt }) => (
+                            <Image
+                                src={typeof src === 'string' ? src : ''}
+                                alt={alt || ''}
+                                width={1200}
+                                height={700}
+                                sizes="(min-width: 1024px) 768px, 100vw"
+                                className="my-6 h-auto w-full max-w-2xl rounded-lg border border-neutral-200 object-contain shadow-sm dark:border-neutral-800"
+                            />
+                        ),
                         a: ({ ...props }) => (
                             <a
                                 {...props}
@@ -105,7 +125,7 @@ export default function TextPage({ config, content, embedded = false }: TextPage
                             />
                         ),
                         blockquote: ({ children }) => (
-                            <blockquote className="border-l-4 border-accent/50 pl-4 italic my-4 text-neutral-600 dark:text-neutral-500">
+                            <blockquote className="my-6 rounded-lg border border-accent/20 bg-accent/5 px-4 py-3 text-sm leading-relaxed text-neutral-700 shadow-sm dark:text-neutral-500">
                                 {children}
                             </blockquote>
                         ),
