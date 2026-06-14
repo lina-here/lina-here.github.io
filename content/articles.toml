@@ -1,4 +1,4 @@
 type = "text"
-title = "Articles"
+title = "Spotlight"
 description = "Selected articles, reflections, and professional writing."
 source = "articles.md"

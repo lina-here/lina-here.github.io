@@ -44,7 +44,7 @@ target = "about"
 href = "/"
 
 [[navigation]]
-title = "Articles"
+title = "Spotlight"
 type = "page"
 target = "articles"
 href = "/articles"
