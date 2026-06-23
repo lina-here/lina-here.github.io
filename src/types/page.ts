@@ -31,6 +31,15 @@ export interface CardItem {
     tags?: string[];
     link?: string;
     image?: string;
+    images?: string[];
+    photoCredit?: string;
+    embed?: {
+        src: string;
+        title: string;
+        height?: number;
+        cropTop?: number;
+        cropHeight?: number;
+    };
 }
 
 export interface CardPageConfig extends BasePageConfig {

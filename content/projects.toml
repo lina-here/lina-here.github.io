@@ -1,6 +1,6 @@
 type = "card"
-title = "Projects and Resources"
-description = "Selected initiatives and original professional content. All descriptions and links in this draft are synthetic placeholders."
+title = "Projects and Achievements"
+description = "Selected involved projects and achievements, including social media platform, newsletters, digital campaigns and projects."
 layout = "grid"
 
 [[items]]
@@ -8,62 +8,69 @@ title = "PCT Stories"
 subtitle = "Original LinkedIn series"
 date = "Ongoing"
 content = "A growing collection of practical stories explaining how the Patent Cooperation Treaty supports innovators across borders."
-tags = ["PCT", "Storytelling"]
+tags = ["PCT", "Patent", "Storytelling"]
 link = "https://www.linkedin.com/in/na-li-wkc/"
-image = "/projects/pct-stories.svg"
+image = "/projects/pct-stories.png"
+photoCredit = "Credits: Lina"
 
 [[items]]
 title = "PCT Newsletters"
 subtitle = "Knowledge and updates"
-content = "Curated developments, practical guidance, and stories from the international patent system."
+content = "Curated developments, practical guidance, and stories from the international patent system from September 2025 to January 2026; Drafted a proposal for the PCT Newsletter revamp."
 tags = ["Newsletter", "Patents"]
-link = "https://www.wipo.int/pct/en/"
-image = "/projects/pct-newsletter.svg"
+link = "https://www.wipo.int/en/web/pct-system/newslett/index"
+image = "/projects/pct-newsletter.png"
+photoCredit = "Credits: WIPO"
 
 [[items]]
 title = "WIPO Knowledge and Resources"
-subtitle = "LinkedIn content"
-content = "Professional posts connecting audiences with useful intellectual property tools and learning materials."
+subtitle = "Social media content"
+content = "Professional posts connecting audiences with useful intellectual property tools and learning materials, from launch in 2024 to January 2025."
 tags = ["Knowledge", "LinkedIn"]
-link = "https://www.linkedin.com/in/na-li-wkc/"
-image = "/projects/wipo-knowledge.svg"
+link = "https://www.linkedin.com/showcase/wipo-knowledge-and-resources"
+image = "/projects/wipo-knowledge.png"
+photoCredit = "Credits: WIPO"
 
 [[items]]
 title = "WKC Newsletter"
 subtitle = "Knowledge communication"
-content = "A newsletter concept presenting timely resources, expert perspectives, and practical learning opportunities."
+content = "A newsletter concept presenting timely resources, expert perspectives, and practical learning opportunities. Monthly updates from 2024 to January 2025."
 tags = ["Editorial", "Knowledge"]
-link = "https://www.wipo.int/"
-image = "/projects/wkc-newsletter.svg"
+link = "https://www.wipo.int/en/web/newsletters/archives?newsletter=wkc"
+image = "/projects/wkc-newsletter.png"
+photoCredit = "Credits: WIPO"
 
 [[items]]
 title = "World IP Day"
-subtitle = "Global campaign"
-content = "Campaign content celebrating creativity, innovation, and the role of intellectual property in improving lives."
+subtitle = "Global digital campaigns"
+content = "Campaigns in celebrating World IP Day on 26 April each year. Involved in co-managing of the IP Day 2024 themed on IP and SDGs and 2025 themed IP and music, including compiled website content, coordinate visuals, co-managed the Youth Video Competition, assisted in developing tool such as [IP and SDG tool - connecting the dots between IP and the SDGs](https://multimedia.wipo.int/exhibitions/ip-sdgs/index.htm), assisted in internal coordination and member states meetings, managed the [changemakers' gallery](https://www.wipo.int/en/web/ipday/wipd-2024-gallery), [World IP Day events calendar](https://www.wipo.int/en/web/ipday/events-calendar), assisting in setting up events at WIPO premises."
 tags = ["Campaign", "World IP Day"]
 link = "https://www.wipo.int/web/ipday"
-image = "/projects/world-ip-day.svg"
+image = "/projects/world-ip-day.png"
+photoCredit = "Credits: WIPO"
 
 [[items]]
 title = "Youth Video Competition"
 subtitle = "Youth engagement"
 content = "An international storytelling initiative inviting young creators to share ideas through short-form video."
 tags = ["Youth", "Video"]
-link = "https://www.wipo.int/"
-image = "/projects/youth-video.svg"
+link = "https://www.wipo.int/en/web/ipday/2025/video-competition"
+image = "/projects/youth-video.png"
+photoCredit = "Credits: WIPO"
 
 [[items]]
 title = "Digital Transformation Resource Hub"
-subtitle = "Practical digital resources"
-content = "A structured collection of tools and examples supporting organizations through digital change."
+subtitle = "Open-access free publications"
+content = "A structured collection of quality publications on digital transformation topics, including smart sustainable cities, cities’ actions to tackle COVID-19, digital public infrastructure, artificial intelligence, Internet of things, blockchain, digital twin, metaverse and virtual worlds and digital transformation trends."
 tags = ["Digital", "Resource Hub"]
-link = "https://www.itu.int/"
-image = "/projects/digital-hub.svg"
+link = "https://www.itu.int/cities/dt-resource-hub/"
+image = "/projects/digital-hub.png"
+photoCredit = "Credits: ITU/Lina"
 
 [[items]]
-title = "Publications"
-subtitle = "Articles and knowledge products"
-content = "Selected publications on intellectual property, communications, innovation, and digital transformation."
-tags = ["Publications", "Research"]
-link = "https://www.wipo.int/publications/en/"
-image = "/projects/publications.svg"
+title = "Data visualization showcase"
+subtitle = "User interface and data design"
+content = "Good at data visualization and user interface design.\n\n[PCT Contracting States (non-use)](https://public.flourish.studio/story/3132921/)\n\n[Patent filing Infographic](https://public.flourish.studio/visualisation/20746595/)"
+tags = ["Data visualization", "UI design"]
+image = "https://public.flourish.studio/visualisation/20746595/thumbnail"
+photoCredit = "Credits: Lina"

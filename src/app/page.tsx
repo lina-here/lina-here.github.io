@@ -129,6 +129,24 @@ function loadPageDataForLocale(locale: string | undefined): HomePageLocaleData {
       id: 'about',
       sections: processSections(aboutConfig.sections || [], locale),
     }];
+
+    const projectsConfig = getPageConfig<CardPageConfig>('projects', locale);
+    if (projectsConfig?.type === 'card') {
+      pagesToShow.push({
+        type: 'card',
+        id: 'projects',
+        config: projectsConfig as CardPageConfig,
+      });
+    }
+
+    const galleryConfig = getPageConfig<CardPageConfig>('gallery', locale);
+    if (galleryConfig?.type === 'card') {
+      pagesToShow.push({
+        type: 'card',
+        id: 'gallery',
+        config: galleryConfig as CardPageConfig,
+      });
+    }
   }
 
   return {

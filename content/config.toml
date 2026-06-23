@@ -1,14 +1,14 @@
 [site]
-title = "Na Li"
+title = "Na (Lina) LI"
 description = "Professional portfolio of Na Li, featuring intellectual property, innovation, and digital transformation initiatives."
 favicon = "/favicon.svg"
 last_updated = "June 10, 2026"
 
 [author]
 name = "Na Li"
-title = "Intellectual Property Professional"
+title = "Intellectual Property Professional/Communication Specialist "
 institution = "Geneva, Switzerland"
-avatar = "/na-li-profile.svg"
+avatar = "/na-li-headshot.jpg"
 
 [social]
 email = "linanalilee@gmail.com"
@@ -42,6 +42,12 @@ title = "Intro"
 type = "page"
 target = "about"
 href = "/"
+
+[[navigation]]
+title = "Spotlight"
+type = "page"
+target = "articles"
+href = "/articles"
 
 [[navigation]]
 title = "Projects"

@@ -71,7 +71,7 @@ const en: LocaleMessages = {
     googleMap: 'Google Map',
     send: 'Send',
     sendEmail: 'Update Email',
-    researchInterests: 'Research Interests',
+    researchInterests: 'Interested topics',
     like: 'Like',
     liked: 'Liked',
     thanks: 'Thanks!',
