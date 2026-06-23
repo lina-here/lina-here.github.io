@@ -1,4 +1,4 @@
-Na Li works at the intersection of intellectual property, international cooperation, knowledge sharing, and digital transformation. She has 5 years of experience in communication, outreach, digital transformation, and project management.
+Na Li works at the intersection of smart cities, intellectual property, and digital transformation. Her work focuses on facilitating international cooperation and knowledge sharing. She has five years of experience in communication, outreach, digital transformation, and project management.
 
 ## 🥇 Policy research and advocacy at the intersection of Intellectual Property, technology, and global development
 
