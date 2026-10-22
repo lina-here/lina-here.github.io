@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
@@ -53,6 +54,10 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
     return null;
   }
 
+  const bottomPageIds = ['projects', 'gallery'];
+  const sidebarPages = data.pagesToShow.filter((page) => !bottomPageIds.includes(page.id));
+  const bottomPages = data.pagesToShow.filter((page) => bottomPageIds.includes(page.id));
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -66,7 +71,7 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
         </div>
 
         <div className="lg:col-span-2 space-y-8">
-          {data.pagesToShow.map((page) => (
+          {sidebarPages.map((page) => (
             <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
               {page.type === 'about' && page.sections.map((section: SectionConfig) => {
                 switch (section.type) {
@@ -89,11 +94,20 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
                     );
                   case 'list':
                     return (
-                      <News
-                        key={section.id}
-                        items={section.items || []}
-                        title={section.title}
-                      />
+                      <div key={section.id} className="space-y-5">
+                        {section.id === 'news' && (
+                          <Link
+                            href="/cv"
+                            className="inline-flex w-fit items-center rounded-md border border-accent/30 bg-accent/5 px-3 py-2 text-sm font-semibold text-accent transition-colors hover:border-accent/60 hover:bg-accent/10 hover:text-accent-dark"
+                          >
+                            Download Na&apos;s CV Here
+                          </Link>
+                        )}
+                        <News
+                          items={section.items || []}
+                          title={section.title}
+                        />
+                      </div>
                     );
                   default:
                     return null;
@@ -123,6 +137,24 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
           ))}
         </div>
       </div>
+
+      {bottomPages.map((page) => (
+        <section key={page.id} id={page.id} className="scroll-mt-24 pt-12">
+          {page.type === 'text' && (
+            <TextPage
+              config={page.config}
+              content={page.content}
+              embedded={true}
+            />
+          )}
+          {page.type === 'card' && (
+            <CardPage
+              config={page.config}
+              embedded={true}
+            />
+          )}
+        </section>
+      ))}
     </div>
   );
 }

@@ -1,6 +1,30 @@
 [[news]]
+date = "2026-06-13"
+title = "GoPro Capturing Innovation through the PCT System"
+content = "An article exploring how GoPro uses the Patent Cooperation Treaty system to protect and manage innovation internationally."
+source = "Articles"
+category = "PCT Story"
+link = "/articles"
+
+[[news]]
+date = "2026-06-12"
+title = "Nobel Prize 2025: the 200 PCT applications behind the breakthroughs"
+content = "A WIPO Magazine feature highlighting the role of PCT applications behind Nobel Prize breakthroughs."
+source = "WIPO Magazine"
+category = "PCT Story"
+link = "https://www.wipo.int/en/web/wipo-magazine/articles/nobel-prize-2025-the-200-pct-applications-behind-the-breakthroughs-86102"
+
+[[news]]
+date = "2026-06-12"
+title = "Develop the Chinese PCT Applicants' Guide"
+content = "A Chinese-language PCT applicants' guide resource supporting access to practical PCT information."
+source = "WIPO PCT Legal"
+category = "PCT Guide"
+link = "https://pctlegal.wipo.int/eGuide/view-doc.xhtml?doc-code=pctip&doc-type=guide&doc-lang=zh"
+
+[[news]]
 date = "2026-05-28"
-title = "Making PCT knowledge easier to navigate"
+title = "PCT user stories including Google, Apple and TIME Best Inventions, and more"
 content = "A short reflection on turning complex international patent information into practical, accessible guidance for innovators."
 source = "Na Li on LinkedIn"
 category = "PCT Story"
@@ -8,16 +32,16 @@ link = "https://www.linkedin.com/in/na-li-wkc/"
 
 [[news]]
 date = "2026-04-24"
-title = "Celebrating World Intellectual Property Day"
+title = "Celebrating World Intellectual Property Day 2024 and 2025"
 content = "Highlights from a campaign connecting creativity, innovation, and the people who bring new ideas to life."
-source = "Na Li on LinkedIn"
+source = "WIPO Website"
 category = "Campaign"
-link = "https://www.linkedin.com/in/na-li-wkc/"
+link = "https://www.wipo.int/en/web/ipday"
 
 [[news]]
 date = "2026-03-12"
 title = "Digital transformation resource spotlight"
-content = "A synthetic feed entry demonstrating how future LinkedIn posts can be manually added in an RSS-style format."
-source = "Na Li on LinkedIn"
+content = "A hub provides a wide range of quality publications on a range of digital transformation topics, including smart sustainable cities, cities’ actions to tackle COVID-19, digital public infrastructure, artificial intelligence, Internet of things, blockchain, digital twin, metaverse and virtual worlds and digital transformation trends."
+source = "Na Li on ITU Website"
 category = "Digital Transformation"
-link = "https://www.linkedin.com/in/na-li-wkc/"
+link = "https://www.itu.int/cities/dt-resource-hub/"

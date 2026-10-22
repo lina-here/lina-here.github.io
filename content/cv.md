@@ -4,7 +4,7 @@ Na (Lina) Li is an intellectual property and public policy professional with exp
 
 ### World Intellectual Property Organization (WIPO)
 
-**Young Expert, PCT Legal and User Resources Sector** - *Geneva, Switzerland | February 2025 - Present*
+**Young Expert, PCT Legal and User Resources Sector** - *Geneva, Switzerland | February 2025 - January 2026*
 
 - Curates the monthly PCT newsletter and contributes to improvements to PCT webpages and newsletter layouts.
 - Drafts PCT user stories and case studies and updates materials concerning PCT regulatory changes.
@@ -55,23 +55,16 @@ Na (Lina) Li is an intellectual property and public policy professional with exp
 
 **Exchange Student** - *2016 - 2017*
 
-## Selected ITU Achievements
-
-- Led the **Digital Transformation Resource Hub**, aggregating reports, studies, and guidance on emerging technologies for cities and communities.
-- Completed **Recommendation ITU-T A.1: Working Methods of ITU-T Study Groups**, November 2022.
-- Participated in the ITU Digital Transformation for Cities and Communities Webinar Series, including the session on emergency responses and smart-city resilience, November 2022.
-
-[View ITU achievements (PDF)](/documents/Na%20Li%20ITU%20achievement.pdf)
-
 ## Research and Publication
 
+- Na Li. "Nobel Prize 2025: the 200+ PCT applications behind the breakthroughs." PCT Legal and User Relations Division, WIPO, December 10, 2025.
 - Capstone project on the student-loan industry in California, completed with Consumer Reports at UCLA. The project included legislative research, more than 50 interviews, over 200 survey responses, and quantitative analysis in R.
 - Shuyuan Song, Yan Wang, Yu Shi, and Na Li. "Comparison of digital transformation of governments and enterprises and an analysis of development trends." *Information Technology and Network Security*, 40(7), 2021, pp. 1-5.
 
 ## Skills
 
 - **IP and policy:** Patent law, intellectual property, technology policy, smart cities
-- **Digital platforms:** WordPress, SharePoint, Mailchimp, CRM systems
-- **Data analysis:** Excel, R, Power BI
+- **Digital platforms:** WordPress, SharePoint, Mailchimp, CRM, VideCoding
+- **Data analysis:** Excel, R, Power BI, Flourish, Tableau
 - **Communications:** Digital campaigns, graphic design, video production, event support
 - **Languages:** Chinese (native), English (advanced), French (A2)

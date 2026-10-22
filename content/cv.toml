@@ -10,25 +10,60 @@ title = "Patent Law and Global Public Health (PatentX)"
 issuer = "Harvard Law School and WIPO Academy"
 date = "January 2025"
 image = "/certificates/patentx.jpg"
-document_url = "/documents/IP%20Certificates.pdf#page=1"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=1"
+
+[[credentials]]
+title = "PRINCE2 7 Foundation in Project Management"
+issuer = "PeopleCert"
+date = "April 2026"
+image = "/certificates/prince2-foundation-project-management.jpg"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=2"
+
+[[credentials]]
+title = "Impactful Communication for Leaders"
+issuer = "INSEAD"
+date = "September-December 2025"
+image = "/certificates/insead-impactful-communication.jpg"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=3"
 
 [[credentials]]
 title = "WIPO-UNIGE Summer School on Intellectual Property"
 issuer = "University of Geneva and WIPO"
 date = "June 2024"
 image = "/certificates/wipo-unige-summer-school.jpg"
-document_url = "/documents/IP%20Certificates.pdf#page=2"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=4"
 
 [[credentials]]
 title = "Advanced Course on Copyright and Related Rights"
 issuer = "WIPO Academy"
 date = "July 2025"
 image = "/certificates/copyright-and-related-rights.jpg"
-document_url = "/documents/IP%20Certificates.pdf#page=3"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=5"
 
 [[credentials]]
 title = "Advanced Course on Patents"
 issuer = "WIPO Academy"
 date = "July 2025"
 image = "/certificates/advanced-patents.jpg"
-document_url = "/documents/IP%20Certificates.pdf#page=4"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=6"
+
+[[credentials]]
+title = "Digital Transformation Resource Hub Project"
+issuer = "ITU-T Smart Cities & Metaverse Team"
+date = "2023"
+image = "/certificates/digital-transformation-resource-hub-achievement.jpg"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=7"
+
+[[credentials]]
+title = "Recommendation ITU-T A.1: Working Methods of ITU-T Study Groups"
+issuer = "ITU Academy"
+date = "November 2022"
+image = "/certificates/itu-a1-working-methods.jpg"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=8"
+
+[[credentials]]
+title = "ITU Digital Transformation for Cities and Communities Webinar Series"
+issuer = "International Telecommunication Union"
+date = "November 2022"
+image = "/certificates/itu-digital-transformation-webinar.jpg"
+document_url = "/documents/ip-certificates-diploma-2026.pdf#page=9"

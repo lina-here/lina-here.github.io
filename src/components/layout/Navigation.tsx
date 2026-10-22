@@ -47,7 +47,8 @@ export default function Navigation({
   const resolvedLocale = i18n.enabled ? locale : i18n.defaultLocale;
 
   const effectiveItems = useMemo(() => {
-    return itemsByLocale?.[resolvedLocale] || itemsByLocale?.[i18n.defaultLocale] || items;
+    const navItems = itemsByLocale?.[resolvedLocale] || itemsByLocale?.[i18n.defaultLocale] || items;
+    return navItems.filter((item) => !['projects', 'gallery'].includes(item.target));
   }, [i18n.defaultLocale, items, itemsByLocale, resolvedLocale]);
 
   const effectiveSiteTitle = useMemo(() => {

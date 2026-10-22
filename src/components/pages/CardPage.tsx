@@ -1,24 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import { ArrowUpRight, X } from 'lucide-react';
 import { CardPageConfig } from '@/types/page';
 
+type CardMedia =
+    | { type: 'image'; src: string }
+    | { type: 'embed'; src: string; title: string; height?: number; cropTop?: number; cropHeight?: number };
+
 const markdownComponents = {
     p: ({ children }: React.ComponentProps<'p'>) => <p className="mb-3 last:mb-0">{children}</p>,
     ul: ({ children }: React.ComponentProps<'ul'>) => <ul className="list-disc list-inside mb-3 space-y-1">{children}</ul>,
     ol: ({ children }: React.ComponentProps<'ol'>) => <ol className="list-decimal list-inside mb-3 space-y-1">{children}</ol>,
     li: ({ children }: React.ComponentProps<'li'>) => <li className="mb-1">{children}</li>,
-    a: ({ ...props }) => (
+    a: ({ children, ...props }: React.ComponentProps<'a'>) => (
         <a
             {...props}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-accent font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
-        />
+            className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors hover:text-accent-dark"
+        >
+            {children}
+            <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+        </a>
     ),
     blockquote: ({ children }: React.ComponentProps<'blockquote'>) => (
         <blockquote className="border-l-4 border-accent/50 pl-4 italic my-4 text-neutral-600 dark:text-neutral-500">
@@ -34,8 +41,39 @@ const markdownComponents = {
 
 export default function CardPage({ config, embedded = false }: { config: CardPageConfig; embedded?: boolean }) {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
+    const [activeMedia, setActiveMedia] = useState<Record<number, number>>({});
     const isGrid = config.layout === 'grid';
     const isGallery = config.layout === 'gallery';
+
+    useEffect(() => {
+        const hasRotatingMedia = config.items.some((item) => {
+            const imageCount = item.images?.length || (item.image ? 1 : 0);
+            return imageCount + (item.embed ? 1 : 0) > 1;
+        });
+
+        if (!hasRotatingMedia) {
+            return;
+        }
+
+        const intervalId = window.setInterval(() => {
+            setActiveMedia((current) => {
+                const next = { ...current };
+
+                config.items.forEach((item, index) => {
+                    const imageCount = item.images?.length || (item.image ? 1 : 0);
+                    const mediaCount = imageCount + (item.embed ? 1 : 0);
+
+                    if (mediaCount > 1) {
+                        next[index] = ((current[index] || 0) + 1) % mediaCount;
+                    }
+                });
+
+                return next;
+            });
+        }, 4000);
+
+        return () => window.clearInterval(intervalId);
+    }, [config.items]);
 
     return (
         <motion.div
@@ -55,15 +93,27 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
             </div>
 
             <div className={`grid ${embedded ? "gap-4" : "gap-6"} ${isGallery ? 'sm:grid-cols-2 lg:grid-cols-3' : isGrid ? 'md:grid-cols-2 lg:grid-cols-3' : ''}`}>
-                {config.items.map((item, index) => (
+                {config.items.map((item, index) => {
+                    const itemImages = item.images && item.images.length > 0 ? item.images : item.image ? [item.image] : [];
+                    const mediaItems: CardMedia[] = [
+                        ...itemImages.map((image) => ({ type: 'image' as const, src: image })),
+                        ...(item.embed ? [{ type: 'embed' as const, ...item.embed }] : []),
+                    ];
+                    const activeMediaIndex = activeMedia[index] || 0;
+                    const activeItem = mediaItems[activeMediaIndex] || mediaItems[0];
+                    const activeImage = activeItem?.type === 'image' ? activeItem.src : null;
+                    const activeEmbed = activeItem?.type === 'embed' ? activeItem : null;
+                    const hasMedia = Boolean(activeItem);
+
+                    return (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className={`overflow-hidden bg-white dark:bg-neutral-900 ${item.image ? "" : embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
+                        className={`overflow-hidden bg-white dark:bg-neutral-900 ${hasMedia ? "" : embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01]`}
                     >
-                        {item.image && (
+                        {activeImage && (
                             <button
                                 type="button"
                                 className={`relative block w-full overflow-hidden text-left ${isGallery ? 'aspect-[4/3]' : 'aspect-[16/9]'}`}
@@ -71,15 +121,58 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                 aria-label={isGallery ? `Open ${item.title} image` : undefined}
                             >
                                 <Image
-                                    src={item.image}
+                                    src={activeImage}
                                     alt={item.title}
                                     fill
                                     sizes="(min-width: 1024px) 33vw, 50vw"
                                     className="object-cover transition-transform duration-300 hover:scale-105"
                                 />
+                                {mediaItems.length > 1 && (
+                                    <span className="absolute right-2 bottom-2 flex gap-1.5 rounded-full bg-black/45 px-2 py-1.5 shadow-sm">
+                                        {mediaItems.map((media, mediaIndex) => (
+                                            <span
+                                                key={`${media.type}-${media.src}`}
+                                                className={`h-1.5 w-1.5 rounded-full ${mediaIndex === activeMediaIndex ? "bg-white" : "bg-white/45"}`}
+                                            />
+                                        ))}
+                                    </span>
+                                )}
+                                {item.photoCredit && (
+                                    <span className="absolute left-2 bottom-2 rounded bg-black/55 px-2 py-1 text-[11px] font-medium leading-none text-white shadow-sm">
+                                        {item.photoCredit}
+                                    </span>
+                                )}
                             </button>
                         )}
-                        <div className={item.image ? embedded ? "p-4" : "p-5" : ""}>
+                        {activeEmbed && (
+                            <div className="relative overflow-hidden bg-neutral-50 dark:bg-neutral-950">
+                                <div
+                                    className="overflow-hidden"
+                                    style={{ height: activeEmbed.cropHeight ? `${activeEmbed.cropHeight}px` : undefined, maxHeight: activeEmbed.cropHeight ? undefined : '520px' }}
+                                >
+                                    <iframe
+                                        src={activeEmbed.src}
+                                        title={activeEmbed.title}
+                                        height={activeEmbed.height || 640}
+                                        className="block w-full"
+                                        style={{ transform: activeEmbed.cropTop ? `translateY(-${activeEmbed.cropTop}px)` : undefined }}
+                                        frameBorder="0"
+                                        allowFullScreen
+                                    />
+                                </div>
+                                {mediaItems.length > 1 && (
+                                    <span className="absolute right-2 bottom-2 flex gap-1.5 rounded-full bg-black/45 px-2 py-1.5 shadow-sm">
+                                        {mediaItems.map((media, mediaIndex) => (
+                                            <span
+                                                key={`${media.type}-${media.src}`}
+                                                className={`h-1.5 w-1.5 rounded-full ${mediaIndex === activeMediaIndex ? "bg-white" : "bg-white/45"}`}
+                                            />
+                                        ))}
+                                    </span>
+                                )}
+                            </div>
+                        )}
+                        <div className={hasMedia ? embedded ? "p-4" : "p-5" : ""}>
                         <div className="flex justify-between items-start gap-3 mb-2">
                             <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary`}>{item.title}</h3>
                             {item.date && (
@@ -115,15 +208,30 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         )}
                         </div>
                     </motion.div>
-                ))}
+                    );
+                })}
             </div>
 
-            {selectedImage !== null && config.items[selectedImage]?.image && (
+            {selectedImage !== null && (() => {
+                const item = config.items[selectedImage];
+                const itemImages = item?.images && item.images.length > 0 ? item.images : item?.image ? [item.image] : [];
+                const mediaItems: CardMedia[] = [
+                    ...itemImages.map((image) => ({ type: 'image' as const, src: image })),
+                    ...(item?.embed ? [{ type: 'embed' as const, ...item.embed }] : []),
+                ];
+                const activeItem = mediaItems[activeMedia[selectedImage] || 0] || mediaItems[0];
+                const activeImage = activeItem?.type === 'image' ? activeItem.src : null;
+
+                if (!item || !activeImage) {
+                    return null;
+                }
+
+                return (
                 <div
                     className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-4"
                     role="dialog"
                     aria-modal="true"
-                    aria-label={config.items[selectedImage].title}
+                    aria-label={item.title}
                     onClick={() => setSelectedImage(null)}
                 >
                     <button type="button" className="absolute right-5 top-5 rounded-full bg-white/10 p-2 text-white hover:bg-white/20" onClick={() => setSelectedImage(null)} aria-label="Close image">
@@ -131,16 +239,17 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                     </button>
                     <div className="max-w-5xl" onClick={(event) => event.stopPropagation()}>
                         <Image
-                            src={config.items[selectedImage].image}
-                            alt={config.items[selectedImage].title}
+                            src={activeImage}
+                            alt={item.title}
                             width={1400}
                             height={1000}
                             className="max-h-[80vh] w-auto rounded-xl object-contain"
                         />
-                        <p className="mt-3 text-center text-sm text-white">{config.items[selectedImage].title}</p>
+                        <p className="mt-3 text-center text-sm text-white">{item.title}</p>
                     </div>
                 </div>
-            )}
+                );
+            })()}
         </motion.div>
     );
 }
