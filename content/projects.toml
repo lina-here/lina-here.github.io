@@ -4,6 +4,16 @@ description = "Selected involved projects and achievements, including social med
 layout = "grid"
 
 [[items]]
+title = "Patent Atlas"
+subtitle = "Open patent and PCT statistics dashboard"
+date = "2026"
+content = "An independent dashboard of patent and PCT statistics from the WIPO Statistics Database: growth, world shares, ranks, world maps and women inventors, with the source, release and data version named on every chart, a citation for each, and a full-screen wallboard mode for conferences."
+tags = ["Patents", "PCT", "Data visualization"]
+link = "https://lina-here.github.io/patent-atlas/"
+image = "/projects/patent-atlas.png"
+photoCredit = "Credits: Lina"
+
+[[items]]
 title = "PCT Stories"
 subtitle = "Original LinkedIn series"
 date = "Ongoing"
